@@ -1,5 +1,5 @@
 import {LitElement, html, css} from 'lit';
-//import "@lrnwebcomponents/meme-maker/meme-maker.js";
+import "@lrnwebcomponents/meme-maker/meme-maker.js";
 
 const Cyber = ("https://www.google.com/imgres?imgurl=https%3A%2F%2Fcybersecuritysummit.com%2Fwp-content%2Fuploads%2F2018%2F01%2FChad-Hunt-56.jpg&imgrefurl=https%3A%2F%2Fcybersecuritysummit.com%2Fspeaker%2Fhunt-chad%2F&tbnid=PWfMr710Tg0DsM&vet=12ahUKEwjwgMTYubT9AhWJlokEHRZDBxQQMygHegUIARCbAQ..i&docid=XSZ9hjHWlU-FOM&w=375&h=450&q=cyber%20chad&client=opera&ved=2ahUKEwjwgMTYubT9AhWJlokEHRZDBxQQMygHegUIARCbAQ");
 export class MyElement extends LitElement {
