@@ -1,14 +1,21 @@
 import {LitElement, html, css} from 'lit';
-//import "@lrnwebcomponents/meme-maker/meme-maker.js";
+import "@lrnwebcomponents/meme-maker/meme-maker.js";
 
 const Cyber = ("https://www.google.com/imgres?imgurl=https%3A%2F%2Fcybersecuritysummit.com%2Fwp-content%2Fuploads%2F2018%2F01%2FChad-Hunt-56.jpg&imgrefurl=https%3A%2F%2Fcybersecuritysummit.com%2Fspeaker%2Fhunt-chad%2F&tbnid=PWfMr710Tg0DsM&vet=12ahUKEwjwgMTYubT9AhWJlokEHRZDBxQQMygHegUIARCbAQ..i&docid=XSZ9hjHWlU-FOM&w=375&h=450&q=cyber%20chad&client=opera&ved=2ahUKEwjwgMTYubT9AhWJlokEHRZDBxQQMygHegUIARCbAQ");
 export class MyElement extends LitElement {
   static properties() {
     return {
-    version: {
+    name: {
       type: String,
       reflect: true
-    }
+    },
+    fname: { type: String},
+      position: {
+        type: String,
+      },
+      top: { type: String},
+      gamet: { type: String},
+
   }
   }
 
@@ -103,7 +110,7 @@ button{
     }
   </style>
  <img src="https://sportshub.cbsistatic.com/i/r/2022/06/10/139ab78f-d458-4a66-9179-0312585bfbfa/thumbnail/1200x675/f403faf31c079bf1f1206f8e8b96660e/tastumcbs.jpg">
-    <div class="heading">
+    <div class="heading" part ="heading">
       <h4><b>${this.gamet}</b></h4>
 
       <meme-maker
