@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <meta name="Description" content="Put your description here.">
+  <base href="/">
+
+  <style>
+    html,
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: sans-serif;
+      background-color: #fdfbfb;
+    }
+   
+  </style>
+  <title><team-card3></team-card3></title>
+</head>
+
+<body>
+  <div class="buttons">
+  <button id="bg-color">Background Color</button>
+  <button onclick="myFunction2()"> Change Heading</button>
+  <button id="delete()">Remove card</button>
+  <button id="duplicate">Replicate</button>
+  </div>
+  
+  <team-card3 top="cooking">
+    <img slot="imagelocation" src="https://sportshub.cbsistatic.com/i/r/2022/06/10/139ab78f-d458-4a66-9179-0312585bfbfa/thumbnail/1200x675/f403faf31c079bf1f1206f8e8b96660e/tastumcbs.jpg"/>
+    <ul>
+      <li>103-90 Warriors</li>
+    </ul>
+  </team-card3>
+  
+  
+
+  <script type="module" src="./src/team-card.js"></script>
+  <script>
+    const function1 = function () {
+  console.log(btn);
+  
+  const div1 = document.querySelector(".card");
+  var child = document.body.appendChild(div1.cloneNode(true));
+  child.classList.add('card2');
+  console.log(child);
+};
+const btn = document.getElementById("duplicate");
+btn.addEventListener("click", function1);
+
+const btn2 = document.getElementById("bg-color");
+btn2.addEventListener("click", function (e) {
+  console.log("i clicked button 2");
+  if (document.querySelector(".card").style.backgroundColor == "white") {
+    document.querySelector(".card").style.backgroundColor = "red";
+  } else {
+    document.querySelector(".card").style.backgroundColor = "white";
+  }
+});
+
+
+function myFunction2() {
+  document.querySelector("h4").innerHTML = "Something else";
+}
+
+document.getElementById("delete()").addEventListener('click', function(e) {
+  const card = document.querySelectorAll(".card");
+  const lastCard = card[card.length - 1];
+  lastCard.remove();
+});
+  </script>
+</body>
+
+</html>
