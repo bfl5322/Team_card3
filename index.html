@@ -23,9 +23,10 @@
 <body>
   <div class="buttons">
   <button id="bg-color">Background Color</button>
-  <button onclick="myFunction2()"> Change Heading</button>
+  <button onclick="changeHeading()"> Change Heading</button>
   <button id="delete()">Remove card</button>
   <button id="duplicate">Replicate</button>
+  <button onclick="toggleDetails()"class="details">Toggle Details</button>
   </div>
   
   <team-card3>
@@ -39,37 +40,43 @@
 
   <script type="module" src="./src/team-card.js"></script>
   <script>
-    const function1 = function () {
+    const Dupe = function () {
   console.log(btn);
   
-  const div1 = document.querySelector(".card");
+  const div1 = document.querySelector(".team-card3");
   var child = document.body.appendChild(div1.cloneNode(true));
   child.classList.add('card2');
   console.log(child);
 };
 const btn = document.getElementById("duplicate");
-btn.addEventListener("click", function1);
+btn.addEventListener("click", Dupe);
 
 const btn2 = document.getElementById("bg-color");
 btn2.addEventListener("click", function (e) {
   console.log("i clicked button 2");
-  if (document.querySelector(".card").style.backgroundColor == "white") {
-    document.querySelector(".card").style.backgroundColor = "red";
+  if (document.querySelector(".team-card3").style.backgroundColor == "white") {
+    document.querySelector(".team-card3").style.backgroundColor = "red";
   } else {
-    document.querySelector(".card").style.backgroundColor = "white";
+    document.querySelector(".team-card3").style.backgroundColor = "white";
   }
 });
 
 
-function myFunction2() {
+function changeHeading() {
   document.querySelector("h4").innerHTML = "Something else";
 }
 
 document.getElementById("delete()").addEventListener('click', function(e) {
-  const card = document.querySelectorAll(".card");
+  const card = document.querySelectorAll(".team-card3");
   const lastCard = card[card.length - 1];
   lastCard.remove();
 });
+
+//details toggle link in the chain
+function toggleDetails() {
+  document.querySelector("team-card3").toggleDetails();
+}
+const detailsButton = document.querySelector("team-card3").shadowRoot.querySelector(".details");
   </script>
 </body>
 
