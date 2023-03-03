@@ -15,22 +15,38 @@
       font-family: sans-serif;
       background-color: #fdfbfb;
     }
+      .duplicate:hover{
+  background-color: red;
+}
+
+.change:hover{
+  background-color: red;
+}
+
+
+.bg-color:hover{
+  background-color: red;
+}
+
+.delete:hover{
+  background-color: red;
+    }
+
    
   </style>
-  <title><team-card3></team-card3></title>
+  <title>team-card3</title>
 </head>
 
 <body>
   <div class="buttons">
-  <button id="bg-color">Background Color</button>
+  <button class="bg-color">Background Color</button>
   <button onclick="changeHeading()"> Change Heading</button>
-  <button id="delete()">Remove card</button>
-  <button id="duplicate">Replicate</button>
-  <button onclick="toggleDetails()"class="details">Toggle Details</button>
+  <button class="delete">Remove card</button>
+  <button class="duplicate">Replicate</button>
   </div>
   
   <team-card3>
-   <img slot="imagelocation" src="https://sportshub.cbsistatic.com/i/r/2022/06/10/139ab78f-d458-4a66-9179-0312585bfbfa/thumbnail/1200x675/f403faf31c079bf1f1206f8e8b96660e/tastumcbs.jpg"/>
+   <img slot="imagelocation" src=""/>
     <ul>
       <li>103-90 Warriors</li>
     </ul>
@@ -38,36 +54,38 @@
   
   
 
-  <script type="module" src="./src/team-card.js"></script>
+  <script type="module" src="./src/team-card3.js"></script>
   <script>
+
+
     const Dupe = function () {
   console.log(btn);
   
-  const div1 = document.querySelector(".team-card3");
+  const div1 = document.querySelector("team-card3");
   var child = document.body.appendChild(div1.cloneNode(true));
-  child.classList.add('card2');
+  child.classList.add("card2");
   console.log(child);
 };
-const btn = document.getElementById("duplicate");
+
+const btn = document.querySelector(".duplicate");
 btn.addEventListener("click", Dupe);
 
-const btn2 = document.getElementById("bg-color");
-btn2.addEventListener("click", function (e) {
-  console.log("i clicked button 2");
-  if (document.querySelector(".team-card3").style.backgroundColor == "white") {
-    document.querySelector(".team-card3").style.backgroundColor = "red";
-  } else {
-    document.querySelector(".team-card3").style.backgroundColor = "white";
-  }
+const bgColor = document.querySelector(".bg-color");
+bgColor.addEventListener("click", function (e) {
+document.querySelector("team-card3").accentColor = "red"
+//random item in an array
+const colors = ["red", "blue", "green"];
+const randomColor = colors[Math.floor(Math.random() * colors.length)];
+document.querySelector("team-card3").accentColor = randomColor;
 });
 
 
 function changeHeading() {
-  document.querySelector("h4").innerHTML = "Something else";
+  document.querySelector("team-card3").shadowRoot.querySelector("h4").innerText = "MEME HAHA";
 }
 
-document.getElementById("delete()").addEventListener('click', function(e) {
-  const card = document.querySelectorAll(".team-card3");
+document.querySelector(".delete").addEventListener('click', function(e) {
+  const card = document.querySelectorAll("team-card3");
   const lastCard = card[card.length - 1];
   lastCard.remove();
 });
@@ -76,7 +94,8 @@ document.getElementById("delete()").addEventListener('click', function(e) {
 function toggleDetails() {
   document.querySelector("team-card3").toggleDetails();
 }
-const detailsButton = document.querySelector("team-card3").shadowRoot.querySelector(".details");
+const detailsButton = document.querySelector("team-card3").shadowRoot.querySelector(".card");
+
   </script>
 </body>
 
