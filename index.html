@@ -15,21 +15,21 @@
       font-family: sans-serif;
       background-color: #fdfbfb;
     }
-      .duplicate:hover{
-  background-color: red;
+ .duplicate:hover{
+  background-color: green;
 }
 
-.change:hover{
-  background-color: red;
+ .change:hover{
+  background-color: green;
 }
 
 
 .bg-color:hover{
-  background-color: red;
+  background-color: green;
 }
 
 .delete:hover{
-  background-color: red;
+  background-color: green;
     }
 
    
@@ -41,7 +41,7 @@
   <div class="buttons">
   <button class="bg-color">Background Color</button>
   <button onclick="changeHeading()"> Change Heading</button>
-  <button class="delete">Remove card</button>
+  <button onclick="deleteLast()" class="delete">Remove card</button>
   <button class="duplicate">Replicate</button>
   </div>
   
@@ -60,7 +60,6 @@
 
     const Dupe = function () {
   console.log(btn);
-  
   const div1 = document.querySelector("team-card3");
   var child = document.body.appendChild(div1.cloneNode(true));
   child.classList.add("card2");
@@ -72,23 +71,21 @@ btn.addEventListener("click", Dupe);
 
 const bgColor = document.querySelector(".bg-color");
 bgColor.addEventListener("click", function (e) {
-document.querySelector("team-card3").accentColor = "red"
 //random item in an array
-const colors = ["red", "blue", "green"];
+const colors = ["blue", "red", "green"];
 const randomColor = colors[Math.floor(Math.random() * colors.length)];
 document.querySelector("team-card3").accentColor = randomColor;
 });
 
 
 function changeHeading() {
-  document.querySelector("team-card3").shadowRoot.querySelector("h4").innerText = "MEME HAHA";
+  document.querySelector("team-card3").shadowRoot.querySelector("h4").innerText = "MEME HAHAHAHA";
 }
 
-document.querySelector(".delete").addEventListener('click', function(e) {
-  const card = document.querySelectorAll("team-card3");
-  const lastCard = card[card.length - 1];
-  lastCard.remove();
-});
+  function deleteLast() {
+  var x = document.querySelector(".card2");
+  x.remove(0);
+};
 
 //details toggle link in the chain
 function toggleDetails() {

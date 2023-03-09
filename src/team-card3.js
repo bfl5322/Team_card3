@@ -5,7 +5,7 @@ import "@lrnwebcomponents/meme-maker/meme-maker.js";
 const Cyber = ("https://sportshub.cbsistatic.com/i/r/2022/06/10/139ab78f-d458-4a66-9179-0312585bfbfa/thumbnail/1200x675/f403faf31c079bf1f1206f8e8b96660e/tastumcbs.jpg");
 
 export class TeamCard extends LitElement {
-  static properties() {
+  static get properties() {
     return {
     name: {
       type: String,
@@ -21,7 +21,7 @@ export class TeamCard extends LitElement {
         type: String,
         reflect: true,
         attribute: 'accent-color'
-  }
+  },
   }
 };
 
@@ -50,7 +50,7 @@ export class TeamCard extends LitElement {
   padding: 20px 8px 20px 8px;
   width: 500px;
   text-align: center;
-  background-color: grey;
+  background-color: green;
 }
 img{
   align-items: center;
@@ -109,8 +109,6 @@ p{
 <div class="card">
     <div class="heading">
       <h4>${this.gameT}</h4>
-      <img src="https://sportshub.cbsistatic.com/i/r/2022/06/10/139ab78f-d458-4a66-9179-0312585bfbfa/thumbnail/1200x675/f403faf31c079bf1f1206f8e8b96660e/tastumcbs.jpg">
-
       <meme-maker
         image-url="${Cyber}"
         top-text="${this.top}"
