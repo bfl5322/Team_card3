@@ -43,9 +43,10 @@
   <button onclick="changeHeading()"> Change Heading</button>
   <button onclick="deleteLast()" class="delete">Remove card</button>
   <button class="duplicate">Replicate</button>
+  <button data-toggle-btn>Toggle stats</button>
   </div>
   
-  <team-card3>
+  <team-card3 gameT="Lit">
    <img slot="imagelocation" src=""/>
     <ul>
       <li>103-90 Warriors</li>
@@ -79,7 +80,7 @@ document.querySelector("team-card3").accentColor = randomColor;
 
 
 function changeHeading() {
-  document.querySelector("team-card3").shadowRoot.querySelector("h4").innerText = "MEME HAHAHAHA";
+  document.querySelector("team-card3").gameT = "MEME HAHAHAHA";
 }
 
   function deleteLast() {
@@ -88,10 +89,17 @@ function changeHeading() {
 };
 
 //details toggle link in the chain
-function toggleDetails() {
-  document.querySelector("team-card3").toggleDetails();
-}
-const detailsButton = document.querySelector("team-card3").shadowRoot.querySelector(".card");
+document.querySelector("button[data-toggle-btn]").addEventListener('click', function (e) {
+const details = document.querySelector('team-card3').shadowRoot.querySelector('details');
+console.log(details);
+  if (details.getAttribute('open')) {
+    details.removeAttribute('open');
+  }
+   else {
+    details.setAttribute('open', 'open');
+  }
+});
+
 
   </script>
 </body>

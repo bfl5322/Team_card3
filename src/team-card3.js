@@ -16,11 +16,15 @@ export class TeamCard extends LitElement {
         type: String,
       },
       top: { type: String},
-      gamet: { type: String},
+      gameT: { type: String,
+      reflect:true},
       accentColor: {
         type: String,
         reflect: true,
         attribute: 'accent-color'
+  },
+  img: { type: String,
+    reflect: true
   },
   }
 };
@@ -96,6 +100,7 @@ p{
     this.gameT = "NBA FINALS 2022 Warriors vs Celtics";
     this.score = "Game score";
     this.top = "HAHA";
+    this.img = Cyber;
   }
 
   toggleDetails() {
@@ -110,7 +115,7 @@ p{
     <div class="heading">
       <h4>${this.gameT}</h4>
       <meme-maker
-        image-url="${Cyber}"
+        image-url="${this.img}"
         top-text="${this.top}"
       >
      </meme-maker>
